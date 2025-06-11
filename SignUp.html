@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+    <!-- Navbar Start -->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="./index.html" id="navbar__logo">The Forum</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item"><a href="./index.html" class="navbar__links">Home</a></li>
+                <li class="navbar__item"><a href="./news.html" class="navbar__links">News</a></li>
+                <li class="navbar__item"><a href="./rules.html" class="navbar__links">Rules</a></li>
+                <li class="navbar__item"><a href="./forum.html" class="navbar__links">Forum</a></li>
+                <li class="navbar__item"><a href="./chat.html" class="navbar__links">Chat</a></li>
+                <li class="navbar__btn"><a href="./signup.html" class="button">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <main>
+        <section class="signup-section">
+            <h1>Create an Account</h1>
+            <hr />
+            <form action="#" method="post" class="signup-form">
+                <label for="username">Username:</label><br />
+                <input type="text" id="username" name="username" required /><br />
+
+                <label for="email">Email:</label><br />
+                <input type="email" id="email" name="email" required /><br />
+
+                <label for="password">Password:</label><br />
+                <input type="password" id="password" name="password" required /><br />
+
+                <button type="submit">Sign Up</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="./app.js"></script>
+</body>
+</html>
