@@ -64,6 +64,19 @@
         <!-- END HEADER -->
 
 
+        <!-- START POST FORM-->
+
+        <h2>Post Something</h2>
+        <form id="postForm">
+            <input type="text" id="postTitle" placeholder="Title" required><br>
+            <textarea id="postBody" placeholder="Write your post here..." required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="postsContainer"></div>
+
+        <!-- END POST FORM-->
+        
         <!-- Test button for Firebase realtime data transmission-->
         <button onclick="testWrite()">Send Test Message</button>
 
@@ -72,7 +85,7 @@
         <script type="module">
             // Import the functions you need from the SDKs you need
             import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-app.js";
-            import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-database.js";
+            import { getDatabase, ref, set, onValue, onChildAdded } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-database.js";
             
             // TODO: Add SDKs for Firebase products that you want to use
             // https://firebase.google.com/docs/web/setup#available-libraries
@@ -100,6 +113,70 @@
             };
 
             window.testWrite = testWrite;
+
+            /* START POST FORM SCRIPT */
+
+            // Get a reference to the form element
+            const postForm = document.getElementById('postForm');
+
+            // Add a listener that uses a generic type 'e' to create an event object to handle when the form is submitted
+            postForm.addEventListener('submit', (e) => {
+                e.preventDefault(); // Prevents the page from reloading, which is HTML's default action
+            
+                // Get the user's input from the form fields
+                const title = document.getElementById('postTitle').value.trim();
+                const body = document.getElementById('postBody').value.trim();
+
+                // Checks the title and body fields are not empty, to prevent creating empty posts
+                if(title && body) {
+                    // Creates a timestamp for the current time the post was made
+                    const timestamp = Date.now();
+                    // Creates a unique postId by using the timestamp since time only increases
+                    const postId = `post-${timestamp}`;
+
+                    // Points to the location in your Firebase Realtime Database under the "posts" node
+                    set(ref(database, 'posts/' + postId), {
+                        // set() writes the object data into that exact location.
+                        title: title,
+                        body: body,
+                        createdAt: timestamp
+                    }).then(() => {
+                        // Message to user to tell them their post has sucessfully been written to the database
+                        alert("Post submitted!");
+                        postForm.reset(); // Clear the form for next post
+                    }).catch((error) => {
+                        // If an any error occurrs when the post is being written to the database a log of the error is written to the console browser
+                        console.error("Error writing new post:", error);
+                    });
+                }
+            });
+
+            /* END POST FORM SCRIPT */
+
+            /* START DISPLAY POST SCRIPT */
+
+            // Grab the div from the HTML where we want to display the posts
+            const postsContainer = document.getElementById('postsContainer');
+            // Create a reference to the 'posts/' section of your Firebase Realtime Database
+            const postsRef = ref(database, 'posts/');
+
+            onChildAdded(postsRef, (snapshot) => {
+                const post = snapshot.val();
+
+                const postElement = document.createElement('div');
+                postElement.classList.add('post');
+
+                postElement.innerHTML = `
+                    <h3>${post.title}</h3>
+                    <p>${post.body}</p>
+                    <small>Post at: ${new Date(post.createdAt).toLocaleString()}</small>
+                    <hr>
+                `;
+
+                postsContainer.prepend(postElement);
+            });
+
+            /* END DISPLAY POST SCRIPT */
         </script>
 
     </body>
