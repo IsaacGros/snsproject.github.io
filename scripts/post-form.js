@@ -1,6 +1,7 @@
 // imports for post-form
 import { ref, set } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-database.js";
 import { database } from './firebase-config.js';
+import { showError } from './utils.js';
 
 /* START POST FORM SCRIPT */
 
@@ -35,6 +36,8 @@ postForm.addEventListener('submit', (e) => {
             }).catch((error) => {
                 // If an any error occurrs when the post is being written to the database a log of the error is written to the console browser
                 console.error("Error writing new post:", error);
+                // If an error occurs when the post is submitted the user is notified with this message.
+                showError("There was a problem submitting your post. Please try again.");
         });
     }
 });

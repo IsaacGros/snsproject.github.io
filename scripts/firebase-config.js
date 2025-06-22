@@ -26,4 +26,4 @@
     export { database };
 // END FIREBASE CONFIG
 
-console.log("✅ firebase-config.js loaded");
+console.log("firebase-config.js loaded successfully");
