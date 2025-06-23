@@ -1,31 +1,67 @@
-/* BODY STYLE */
 body {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.8rem; /* 18px */
-    font-weight: 400;
-    line-height: 1.4;
-    color: var(--main-white);
+    /* this is the body */
+  background-color: lightblue;
 }
 
-/* NAV STYLE */
-.nav {
+h1 {
+    /* this is the header */
+  color: #000000;
+  text-align: center;
+}
+
+p {
+    /* this is the paragraph */
+  font-family: verdana;
+  font-size: 20px;
+}
+
+.navbar {
+    /* this is the navbar */
+    background: #000000;
+    height: 80px;
     display: flex;
     justify-content: center;
-    position: fixed;
+    align-items: center;
+    font-size: 1.2rem;
+    position:sticky;
     top: 0;
-    width: 80%;
-    background-color: rgba(0,0,0,0.025);
-    z-index: 10;
-    border-top: 1px ridge rgb(216,216,216);
-    border-bottom: 1px groove rgb(216,216,216);
+    z-index: 999;
 }
 
-.nav-list {
+.navbar__container{
+    /* this is the container for the navbar */
+
+    width: 100%;
+    height: 80px;
+    z-index: 1;
+    max-width: 1300px;
     display: flex;
-    margin-right: 0rem;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 0 50px;
+    
 }
 
-<!-- Styles.css for sign-up -->
+#navbar__logo {
+    /* this is the logo "the forum" in the navbar */
+    background-color:#ffffff;
+    background-image: linear-gradient(to top, #00ccff 0%, #ffffff 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color:transparent;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    padding-left: 40px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+    
+}
+
+<!-- START ASIA Styles.css for sign-up.html -->
 
 /* Center and style the signup form section */
 .signup-section {
@@ -84,3 +120,216 @@ body {
     .signup-form button:hover {
         background-color: #004b55;
     }
+
+<!-- END ASIA Styles.css for sign-up.html -->
+
+.fa-gem {
+    /* this is the an icon placeholder in the navbar, as i am typing this, it doesnt really exist yet*/
+    
+    margin-right:0.5rem;
+
+}
+
+.navbar__menu {
+    /* this is the navbar menu */
+
+    display: flex;
+    align-items:center;
+    list-style:none;
+    text-align:center;
+
+}
+
+.navbar__item {
+    /* this is the items in the navbar what height they should sit on the screen */
+    height: 80px;
+}
+
+.navbar__links{
+    /* this is the links in the navbar */
+    color:#ffffff;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration:none;
+    padding:0 1rem;
+    height:100%;
+}
+
+.navbar__btn{
+    /* this is the buttons in the navbar */
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding: 0 1rem;
+    width: 100%;
+}
+
+.button {
+    /* this is the  sign up button in the navbar */
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    text-decoration: none;
+    padding: 10px 20px;
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline:none;
+    border-radius: 4px;
+    background: #46c4eb;
+    color: #fff;
+
+}
+.button:hover {
+    /* this is the hover effect for the sign upbutton it changes its color when u hover over it */
+    background: #004b55;
+    transition: all 0.3s ease;
+
+}
+
+.navbar__links:hover {
+    /* this is the hover effect for the links in the navbar it changes their color when u hover over them*/
+    color: #00d9ff;
+    transition: all 0.3s ease;
+}
+@media screen and (max-width: 960px) {
+/* this is the media query for the navbar when the screen is smaller than 960px */
+    .navbar__container {
+        display:flex;
+        justify-content: space-between;
+        height:80px;
+        z-index: 1;
+        width: 100%;
+        max-width: 1300px;
+        padding: 0;
+    }
+ 
+    .navbar__menu {
+        /* this is adding animation to the navbar later, it should come down from above and stuff */
+   
+        display:grid;
+        grid-template-columns: auto;
+        margin: 0;
+        width: 93.9%;
+        position: absolute;
+        top: -1000px;
+        opacity:0;
+        transition: all 0.5s ease;
+        height: 50vh;
+        z-index:-1;
+        background: #000000;
+        
+    }
+
+    .navbar__menu.active{
+        /* this is the active state of the navbar when it is open, javascript that is triggered when it is opened*/
+        background: #000000;
+        top:100%;
+        opacity:1;
+        transition:all 0.5s ease;
+        z-index: 99;
+        height:50vh;
+        font-size:1.6rem;
+    }
+
+    #navbar__logo{
+        padding-left:25px;
+    }
+
+    .navbar__toggle .bar {
+        /* this is the hamburger menu icon that appears when the screen is smaller than 960px */
+        width:25px;
+        height:3px;
+        margin:5px auto;
+        transition: all 0.3s ease-in-out;
+        background: #fff;
+
+    }
+
+    .navbar__item{
+        /* creates navbar item */
+        width:100%;
+
+    }
+    .navbar__links{
+        /* edits navbar item */
+        text-align:center;
+        padding:2rem;
+        width:100%;
+        display:table;
+    }
+
+    #mobile-menu {
+        /* this is the mobile menu icon that appears when the screen is smaller than 960px */
+        position:absolute;
+        top:20%;
+        right:5%;
+        transform:translate(5%,20%);
+
+    }
+    .navbar__btn{
+        padding-bottom:2rem;
+
+    }
+
+    .button{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        width: 80%;
+        height:80px;
+        margin:0;
+
+    }
+
+    .navbar__toggle .bar{
+        display:block;
+        cursor:pointer;
+
+    }
+/* this is the animation for the navbar menu icon, makes the lines twist around before the menu drops down */
+    #mobile-menu.is-active .bar:nth-child(2) {
+        opacity:0;
+    }
+    #mobile-menu.is-active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+      #mobile-menu.is-active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+
+
+}
+
+/* Styles for the GUI error message script */
+#errorAlert {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f44336;
+    color: white;
+    padding: 16px 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    display: none;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    z-index: 9999;
+    cursor: default;
+    max-width: 80%;
+    text-align: center;
+}
+
+#errorAlert button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 1;
+    margin-left: 16px;
+}
