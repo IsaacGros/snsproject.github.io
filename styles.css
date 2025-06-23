@@ -171,7 +171,7 @@ p {
         font-size:1.6rem;
     }
 
-    #navbar--logo{
+    #navbar__logo{
         padding-left:25px;
     }
 
@@ -239,4 +239,35 @@ p {
 
 
 
+}
+
+/* Styles for the GUI error message script */
+#errorAlert {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f44336;
+    color: white;
+    padding: 16px 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    display: none;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    z-index: 9999;
+    cursor: default;
+    max-width: 80%;
+    text-align: center;
+}
+
+#errorAlert button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 1;
+    margin-left: 16px;
 }

@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <!--
+    Social network software project developed by the following student group members:
+    Asia Davis, Chukwujika Ofordu, Dylan Tran, Eva Molnar, and Isaac Gros
+
+    Date Created:05/06/2025
+    -->
+
+    <title>The Forum | Home</title>
+    <meta name="author" content="Asia Davis, Chukwujika Ofordu, Dylan Tran, Eva Molnar, Isaac Gros">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Group Project</title>
+    <meta http-equiv="refresh" content="30">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:,">
 </head>
+
 <body>
+  
+    <!-- START EVA-NAVBAR -->
     <nav class="navbar">
         <div class="navbar__container">
             <a href="#" id="navbar__logo">The Forum</a>
@@ -31,10 +46,51 @@
             </ul>
         </div>
     </nav>
-     <main>
-        <h1>Home</h1>
-        <p>This page will be the front page of the website, it can preview the forums.</p>
-    </main>
-    <script src="app.js"></script>
-</body>
+      
+    <!-- START HEADER -->
+    <header id="header" class="site-header">
+        <div>
+            <h1>Home</h1>
+            <p>This page will be the front page of the website, it can preview the forums.</p>
+        </div>
+    </header>
+    <!-- END HEADER -->
+  
+  <main>
+    <!-- START POST FORM-->
+
+    <h2>Post Something</h2>
+    <form id="postForm">
+        <input type="text" id="postTitle" placeholder="Title" required><br>
+        <textarea id="postBody" placeholder="Write your post here..." required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="postsContainer"></div>
+    <!-- END POST FORM-->
+        
+        <!-- Test button for Firebase realtime data transmission-->
+        <button onclick="testWrite()">Send Test Message</button>
+  </main>
+        
+        <!-- SCRIPT IMPORTS -->
+  
+        <!-- Creates collapsable hamburger menu animation -->
+        <script src="app.js"></script>
+  
+        <!-- Creates graphic user error message that can be attached for any feature -->
+        <script type="module" src="./scripts/utils.js"></script>
+      
+        <!-- Firebase initialization and configuration -->
+        <script type="module" src="./scripts/firebase-config.js"></script>
+
+        <!-- Handles post creation and submission form logic -->
+        <script type="module" src="./scripts/post-form.js"></script>
+
+        <!-- Responsible for fetching and displaying posts on the page -->
+        <script type="module" src="./scripts/post-display.js"></script>
+
+        <!-- Utility script for testing Firebase realtime database connectivity -->
+        <script type="module" src="./scripts/test-button.js"></script>
+        
+    </body>
 </html>
