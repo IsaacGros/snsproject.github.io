@@ -288,14 +288,14 @@ p {
         cursor:pointer;
 
     }
-/* this is the animation for the navbar menu icon, makes the lines twist around before the menu drops down */
+/* this is the animation for the navbar menu icon, makes the lines twist around into an X before the menu drops down */
     #mobile-menu.is-active .bar:nth-child(2) {
         opacity:0;
     }
     #mobile-menu.is-active .bar:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
     }
-      #mobile-menu.is-active .bar:nth-child(3) {
+    #mobile-menu.is-active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
 
