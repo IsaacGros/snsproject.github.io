@@ -15,11 +15,15 @@
         <meta charset="UTF-8">
         <meta http-equiv="refresh" content="30">
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-        <link rel="stylesheet" hrerf="styles.css">
-        <base href="https://isaacgros.github.io/snsproject.github.io/" target="_blank">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" href="data:,">
+
     </head>
 
     <body>
+
+                <!-- SCRIPT FOR SHARED UTILITIES -->
+        <script type="module" src="./scripts/utils.js"></script>
 
         <!-- START NAVBAR -->
         <nav id="navbar" class="nav">
@@ -63,7 +67,35 @@
         <!-- END HEADER -->
 
 
+        <!-- START POST FORM-->
 
+        <h2>Post Something</h2>
+        <form id="postForm">
+            <input type="text" id="postTitle" placeholder="Title" required><br>
+            <textarea id="postBody" placeholder="Write your post here..." required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="postsContainer"></div>
+
+        <!-- END POST FORM-->
+        
+        <!-- Test button for Firebase realtime data transmission-->
+        <button onclick="testWrite()">Send Test Message</button>
+
+        
+        <!-- Firebase initialization and configuration -->
+        <script type="module" src="./scripts/firebase-config.js"></script>
+
+        <!-- Handles post creation and submission form logic -->
+        <script type="module" src="./scripts/post-form.js"></script>
+
+        <!-- Responsible for fetching and displaying posts on the page -->
+        <script type="module" src="./scripts/post-display.js"></script>
+
+        <!-- Utility script for testing Firebase realtime database connectivity -->
+        <script type="module" src="./scripts/test-button.js"></script>
+        
     </body>
 
 
