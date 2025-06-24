@@ -15,6 +15,8 @@ p {
   font-size: 20px;
 }
 
+/* START EVA Styles for navbar */
+
 .navbar {
     /* this is the navbar */
     background: #000000;
@@ -60,68 +62,6 @@ p {
     font-size: 2rem;
     
 }
-
-/* START ASIA Styles.css for sign-up.html */
-
-/* Center and style the signup form section */
-.signup-section {
-    position: absolute; /* center relative to viewport */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(255, 255, 255, 0.95); /* white with slight transparency */
-    max-width: 400px;
-    width: 90%;
-    padding: 30px 40px;
-    border-radius: 20px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-    color: #000;
-    z-index: 1000;
-}
-
-    .signup-section h1 {
-        margin-bottom: 15px;
-        color: #007bff; /* you can customize heading color */
-    }
-
-.signup-form label {
-    display: block;
-    margin-top: 15px;
-    font-weight: 600;
-    text-align: left;
-    color: #333;
-}
-
-.signup-form input {
-    width: 100%;
-    padding: 10px;
-    margin-top: 6px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-size: 1rem;
-    box-sizing: border-box;
-}
-
-.signup-form button {
-    margin-top: 25px;
-    width: 100%;
-    padding: 12px;
-    background-color: #46c4eb;
-    border: none;
-    border-radius: 8px;
-    color: white;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-    .signup-form button:hover {
-        background-color: #004b55;
-    }
-
-/* END ASIA Styles.css for sign-up.html */
 
 .fa-gem {
     /* this is the an icon placeholder in the navbar, as i am typing this, it doesnt really exist yet*/
@@ -181,6 +121,7 @@ p {
     color: #fff;
 
 }
+
 .button:hover {
     /* this is the hover effect for the sign upbutton it changes its color when u hover over it */
     background: #004b55;
@@ -193,6 +134,7 @@ p {
     color: #00d9ff;
     transition: all 0.3s ease;
 }
+
 @media screen and (max-width: 960px) {
 /* this is the media query for the navbar when the screen is smaller than 960px */
     .navbar__container {
@@ -268,6 +210,7 @@ p {
         transform:translate(5%,20%);
 
     }
+
     .navbar__btn{
         padding-bottom:2rem;
 
@@ -288,7 +231,7 @@ p {
         cursor:pointer;
 
     }
-/* this is the animation for the navbar menu icon, makes the lines twist around into an X before the menu drops down */
+    /* this is the animation for the navbar menu icon, makes the lines twist around into an X before the menu drops down */
     #mobile-menu.is-active .bar:nth-child(2) {
         opacity:0;
     }
@@ -299,9 +242,73 @@ p {
         transform: translateY(-8px) rotate(-45deg);
     }
 
-
-
 }
+
+/* START ASIA Styles.css for sign-up.html */
+
+/* Center and style the signup form section */
+.signup-section {
+    position: absolute; /* center relative to viewport */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.95); /* white with slight transparency */
+    max-width: 400px;
+    width: 90%;
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: #000;
+    z-index: 1000;
+}
+
+    .signup-section h1 {
+        margin-bottom: 15px;
+        color: #007bff; /* you can customize heading color */
+    }
+
+.signup-form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 600;
+    text-align: left;
+    color: #333;
+}
+
+.signup-form input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.signup-form button {
+    margin-top: 25px;
+    width: 100%;
+    padding: 12px;
+    background-color: #46c4eb;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .signup-form button:hover {
+        background-color: #004b55;
+    }
+
+/* END ASIA Styles.css for sign-up.html */
+
+/* END EVA Style for navbar */
+
+/* START ISAAC Style for error message */
 
 /* Styles for the GUI error message script */
 #errorAlert {
@@ -333,3 +340,79 @@ p {
     line-height: 1;
     margin-left: 16px;
 }
+
+/* END ISAAC Style for error message */
+
+/* START ISAAC Style for forum category */
+
+.forum-sections {
+    max-width: 90%;
+    max-width: 1220px;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.forum-group {
+    border-top: 3px solid #000;
+}
+
+.group-title {
+    color:#000;
+    font-size: 2rem;
+    margin: 0.5rem;
+}
+
+.forum-row {
+    display: block;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    padding: 1.25rem;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.2s;
+}
+
+.forum-row:hover {
+    background-color: #eaeaea;
+}
+
+.forum-info h2 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.forum-info p {
+    margin-top: 0.25rem;
+    color: #444;
+    font-size: 0.95rem;
+}
+
+/* END ISAAC Style for forum category */
+
+
+/* START ISAAC Style for threads */
+
+#no-threads-message {
+    color:#000;
+}
+
+.thread-preview {
+    border: 1px solid #000;
+    background: #fff;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+}
+
+.thread-preview h3 {
+    margin: 0 0 0.5rem 0;
+}
+
+.thread-preview a {
+    text-decoration: none;
+    color: #0077cc;
+}
+
+/* END ISAAC Style for threads */
