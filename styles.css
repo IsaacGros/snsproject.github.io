@@ -571,3 +571,24 @@ p {
 }
 
 /* END ISAAC Style for reply container in thread.html */
+
+/* START ISAAC Style for thread/reply-actions in thread.html */
+
+.thread-actions, .reply-actions {
+    margin: 1rem 0;
+}
+
+.thread-actions button,
+.reply-actions button {
+    margin-right: 1rem;
+    padding: 0.4rem 0.8rem;
+    background-color: #ddd;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.thread-actions button:hover,
+.reply-actions button:hover {
+    background-color: #ccc;
+}
