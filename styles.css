@@ -394,6 +394,11 @@ p {
 
 /* START ISAAC Style for threads.html */
 
+#threads-wrapper {
+    max-width: 90%;
+    margin: 2rem auto;
+}
+
 #no-threads-message {
     color:#000;
 }
@@ -405,7 +410,6 @@ p {
     padding: 1rem;
     border-top: 2px solid #9e9e9e;
     border-bottom: 2px solid #9e9e9e;
-    margin-bottom: 1rem;
     background: #fff;
     transition: background-color 0.2s;
 }
@@ -432,13 +436,13 @@ p {
 
 #create-thread-btn {
   display: inline-block;
-  padding: .6rem 1.2rem;
+  padding: 1rem;
   background-color: #0077cc;
   color: white;
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
-  margin: 1rem 0rem 1rem;
+  margin: 1rem 0;
 }
 
 #create-thread-btn:hover {
@@ -542,6 +546,9 @@ p {
     background-color: #005fa3;
 }
 
+/* END ISAAC Style for reply form in thread.html */
+
+/* START ISAAC Style for reply container in thread.html */
 .reply {
     background-color: #f9f9f9;
     border-bottom: 2px solid #9e9e9e;
@@ -563,4 +570,4 @@ p {
     color: #2c2c2c;
 }
 
-/* END ISAAC Style for reply form in thread.html */
+/* END ISAAC Style for reply container in thread.html */
