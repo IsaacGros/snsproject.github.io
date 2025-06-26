@@ -42,11 +42,27 @@ function loadThreads(category) {
 
 // Create a DOM element for a single thread
 function createThreadElement(threadId, threadData) {
-    const threadDiv = document.createElement("div");
-    threadDiv.className = "thread-preview";
-    threadDiv.innerHTML = `
-        <h3><a href="thread.html?id=${threadId}&category=${threadData.category}">${threadData.title}</a></h3>
+    const threadLink = document.createElement("a");
+    threadLink.className = "thread-preview";
+    threadLink.href = `thread.html?id=${threadId}&category=${threadData.category}`;
+
+    const createdDate = threadData.createdAt
+        ? new Date(threadData.createdAt).toLocaleString()
+        : "Unknown";
+
+    threadLink.innerHTML = `
+        <h3>${threadData.title}</h3>
+        <div class="thread-preview-meta">
         <p>By ${threadData.author || "Anonymous"}</p>
+        <p>Posted: ${createdDate}</p>
+        </div>
     `;
-    return threadDiv;
+    return threadLink;
+}
+
+// After you extract the category:
+const createBtn = document.getElementById("create-thread-btn");
+
+if (category && createBtn) {
+    createBtn.href = `create-thread.html?category=${category}`;
 }
