@@ -1,39 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Create New Thread</title>
-        <link rel="stylesheet" href="../styles.css">
-        <script type="module" src="../scripts/create-thread.js" defer></script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Create New Thread</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script type="module" src="../scripts/create-thread.js" defer></script>
+</head>
+
+<body>
+<div id="navbar-placeholder"></div>
+<script type="module" src="../scripts/navbar-loader.js"></script>
     
-    <body>
+    <header>
+        <a id="back-link" href="#">← Back to Threads</a>
+        <h1>Create New Thread</h1>
+    </header>
 
-        <header>
-            <a href="threads.html">← Back to Threads</a>
-            <h1>Create New Thread</h1>
-        </header>
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const category = params.get("category");
 
-        <main>
-            <form id="createThreadForm">
-                <input
-                type="text"
-                id="threadTitle"
-                placeholder="Thread Title"
-                required
-                maxlength="100"
-                ><br>
-                <textarea
-                id="threadBody"
-                placeholder="Write your thread content here..."
-                required
-                rows="8"
-                maxlength="1000"
-                ></textarea><br>
-                <button type="submit">Submit Thread</button>
-            </form>
-        </main>
+    const backLink = document.getElementById("back-link");
+    if (category) {
+        backLink.href = `threads.html?category=${encodeURIComponent(category)}`;
+    } else {
+        backLink.href = "threads.html"; // fallback
+    }
+</script>
 
-    </body>
+    <main>
+        <form id="createThreadForm">
+            <input
+            type="text"
+            id="threadTitle"
+            placeholder="Thread Title"
+            required
+            maxlength="100"
+            ><br>
+            <textarea
+            id="threadBody"
+            placeholder="Write your thread content here..."
+            required
+            rows="8"
+            maxlength="1000"
+            ></textarea><br>
+            <button type="submit">Submit Thread</button>
+        </form>
+    </main>
+</body>
 </html>
