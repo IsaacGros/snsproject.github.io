@@ -23,6 +23,7 @@
     const app = initializeApp(firebaseConfig);
     const database = getDatabase(app);
 
+    // Explicitly export the database for other scripts to import and retrieve data from the DB.
     export { database };
 // END FIREBASE CONFIG
 

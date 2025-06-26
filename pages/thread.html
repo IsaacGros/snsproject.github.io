@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thread View</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script type="module" src="../scripts/thread.js" defer></script>
+</head>
+
+<body>
+
+    <div id="navbar-placeholder"></div>
+    <script type="module" src="../scripts/navbar-loader.js"></script>
+
+    <header>
+        <a id="back-link" href="forums.html">← Back</a>
+    </header>
+
+    <main>
+        <div id="thread-wrapper">
+
+            <!-- Reply Button / Form -->
+            <section id="reply-form-section">
+                <h2 style="display: none;">Post a Reply</h2>
+                <form id="reply-form" class="reply-form">
+                    <textarea id="reply-text" placeholder="Write your reply here..." required></textarea>
+                    <button type="submit">Submit Reply</button>
+                </form>
+            </section>
+
+            <!-- Main Thread Content -->
+            <section id="thread-container">
+                <h1 id="thread-title">Loading...</h1>
+
+                <div class="thread-meta">
+                    <p><strong>Author:</strong> <span id="thread-author">...</span></p>
+                    <p><strong>Posted:</strong> <span id="thread-date">...</span></p>
+                </div>
+            
+                <div class="thread-divider"></div>
+            
+                <div id="thread-body">
+                    <p>Loading content...</p>
+                </div>
+
+                <div class="thread-actions">
+                    <button class="edit-thread-btn">Edit</button>
+                    <button class="delete-thread-btn">Delete</button>
+                </div>
+            
+                <p id="thread-error" style="display: none;">Thread not found or failed to load.</p>
+            </section>
+
+            <div id="replies-container">
+                <!-- Replies will be inserted here -->
+            </div>
+        </div>
+
+    </main>
+</body>
+
+</html>
